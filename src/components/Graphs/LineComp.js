@@ -1,17 +1,10 @@
 import React, { useContext } from "react";
-import {
-  Legend,
-  Line,
-  LineChart,
-  ReferenceLine,
-  Tooltip,
-  XAxis,
-} from "recharts";
+import { Line, LineChart, ReferenceLine, Tooltip, XAxis } from "recharts";
 import { GlobalContext } from "../../context/GlobalState";
 
 const LineComp = () => {
   const { lineGraph, skillStats } = useContext(GlobalContext);
-
+  console.log(skillStats.percentile);
   return (
     <LineChart
       height={300}
@@ -25,16 +18,14 @@ const LineComp = () => {
       }}
     >
       <XAxis dataKey="percentile" />
-      {/* <YAxis dataKey="cnt" /> */}
       <Tooltip />
-      <Legend />
       <Line
         type="monotone"
         dataKey="numberOfStudent"
         stroke="#8884d8"
         activeDot={{ r: 8 }}
       />
-      <ReferenceLine x={skillStats.percentile} label="your Score" />
+      <ReferenceLine x={skillStats.percentile} label="your percentile" />
     </LineChart>
   );
 };

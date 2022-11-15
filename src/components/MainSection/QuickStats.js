@@ -6,7 +6,6 @@ import { GlobalContext } from "../../context/GlobalState";
 
 const QuickStats = () => {
   const { skillStats } = useContext(GlobalContext);
-  const sampleStats = skillStats;
   return (
     <div className="p-4 border-1 border my-5 rounded-lg">
       <div className="font-bold">Quick Statistics</div>
@@ -17,7 +16,7 @@ const QuickStats = () => {
           </div>
           <div className="pr-4">
             <div className="font-bold text-xl">
-              {sampleStats.rank.toLocaleString()}
+              {skillStats.rank.toLocaleString()}
             </div>
             <div className="text-sm text-gray-400">YOUR RANK</div>
           </div>
@@ -27,7 +26,7 @@ const QuickStats = () => {
             <img src={quickStatLogo2} alt="trophie" />
           </div>
           <div className="pr-4">
-            <div className="font-bold text-xl">{sampleStats.percentile}%</div>
+            <div className="font-bold text-xl">{skillStats.percentile}%</div>
             <div className="text-sm text-gray-400">PERCENTILE</div>
           </div>
         </div>
@@ -37,9 +36,9 @@ const QuickStats = () => {
           </div>
           <div className="pr-4">
             <div className="font-bold text-xl">
-              {sampleStats.score > 10
-                ? "0" + sampleStats.score
-                : sampleStats.score}
+              {skillStats.score < 10
+                ? "0" + skillStats.score
+                : skillStats.score}
               /15
             </div>
             <div className="text-sm text-gray-400">CORRECT ANSWERS</div>

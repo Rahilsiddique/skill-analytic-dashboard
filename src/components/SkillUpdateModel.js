@@ -32,9 +32,9 @@ const SkillUpdateModel = ({ visible }) => {
       : setLineGraph((prev) => [
           ...prev,
           {
-            id: lineGraph.length + 1,
             percentile: localChange.percentile,
-            cnt: Math.floor(Math.random() * 50),
+            id: lineGraph.length + 1,
+            numberOfStudent: Math.floor(Math.random() * 50),
           },
         ]);
     setShowSkillModel((prev) => !prev);
