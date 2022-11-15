@@ -11,6 +11,21 @@ export const GlobalProvider = ({ children }) => {
   });
   let ans = [
     {
+      percentile: 10,
+      id: 10,
+      numberOfStudent: 2,
+    },
+    {
+      percentile: 20,
+      id: 20,
+      numberOfStudent: 3,
+    },
+    {
+      percentile: 30,
+      id: 30,
+      numberOfStudent: 6,
+    },
+    {
       percentile: 35,
       id: 1,
       numberOfStudent: 12,

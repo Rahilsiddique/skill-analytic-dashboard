@@ -25,7 +25,7 @@ const LineComp = () => {
         stroke="#8884d8"
         activeDot={{ r: 8 }}
       />
-      <ReferenceLine x={skillStats.percentile} label="your percentile" />
+      <ReferenceLine x={skillStats?.percentile} label="your percentile" />
     </LineChart>
   );
 };
