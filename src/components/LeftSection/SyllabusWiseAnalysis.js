@@ -4,12 +4,11 @@ const SyllabusWiseAnalysis = () => {
   const [loadEffect, setLoadEffect] = useState(false);
   useEffect(() => {
     window.onbeforeunload = function () {
-      setLoadEffect((prev) => !prev);
+      setLoadEffect(true);
     };
 
     return () => {
       window.onbeforeunload = null;
-      setLoadEffect((prev) => !prev);
     };
   }, []);
   return (
