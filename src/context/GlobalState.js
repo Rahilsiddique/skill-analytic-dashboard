@@ -58,7 +58,6 @@ export const GlobalProvider = ({ children }) => {
     },
   ];
   const [lineGraph, setLineGraph] = useState(ans);
-  console.log(lineGraph);
   lineGraph.sort((a, b) => a.percentile - b.percentile);
   return (
     <GlobalContext.Provider

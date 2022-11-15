@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 const SyllabusWiseAnalysis = () => {
   const [loadEffect, setLoadEffect] = useState(false);
   useEffect(() => {
-    window.onbeforeunload = function () {
-      setLoadEffect(true);
+    window.onload = function () {
+      setLoadEffect((prev) => !prev);
     };
 
     return () => {
-      window.onbeforeunload = null;
+      window.onload = null;
     };
   }, []);
   return (

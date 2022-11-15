@@ -1,12 +1,9 @@
 import React, { useContext } from "react";
 import { Cell, Pie, PieChart } from "recharts";
 import { GlobalContext } from "../../context/GlobalState";
-import scoreChartCenter from "../../assets/images/scoreChartCenter.png";
 
 const ScoreChart = () => {
   const { skillStats } = useContext(GlobalContext);
-  // #EDF4FF
-  console.log(scoreChartCenter);
   const data01 = [
     { name: "score", value: skillStats.score },
     { name: "outOff", value: 15 - skillStats.score },
