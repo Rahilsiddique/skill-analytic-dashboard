@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import NavBar from "./components/NavBar";
+import SideBar from "./components/SideBar";
+import MainSection from "./components/MainSection";
+import RightSection from "./components/RightSection";
+import SkillUpdateModel from "./components/SkillUpdateModel";
+import { useContext } from "react";
+import { GlobalContext } from "./context/GlobalState";
 
 function App() {
+  const { showSkillModel } = useContext(GlobalContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-screen">
+      <NavBar />
+      <div className="grid md:grid-cols-6 w-full grid-cols-1">
+        <div className="col-span-1">
+          <SideBar />
+        </div>
+        <div className="col-span-3 ml-4">
+          <MainSection />
+        </div>
+        <div className="col-span-2 mr-4">
+          <RightSection />
+        </div>
+      </div>
+      <SkillUpdateModel visible={showSkillModel} />
     </div>
   );
 }
